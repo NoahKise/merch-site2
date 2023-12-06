@@ -1,36 +1,28 @@
 import React from "react";
 import StockItem from "./StockItem";
+import PropTypes from 'prop-types';
 
-const itemsInStock = [
-  {
-    name: 'Vinyl LP',
-    price: '$30',
-    id: '1'
-  },
-  {
-    name: 'T-shirt',
-    price: '$15',
-    id: '2'
-  },
-  {
-    name: 'Hoodie',
-    price: '$45',
-    id: '3'
-  }
-];
-
-function MasterStock(){
+function MasterStock(props){
   return (
     <React.Fragment>
       <hr/>
-      {itemsInStock.map((item, index) =>
+      {props.itemsInStock.map((item, index) =>
         <StockItem name={item.name}
           price={item.price}
+          leftInStock={item.leftInStock}
           id={item.id}
           key={index}/>
       )}
     </React.Fragment>
   );
 }
+
+//   this.setState({mainTicketList: newMainTicketList,
+//                 formVisibleOnPage: false });
+// }
+
+MasterStock.propTypes = {
+  masterStock: PropTypes.array
+};
 
 export default MasterStock;

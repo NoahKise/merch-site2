@@ -1,12 +1,12 @@
 import React from "react";
 import Header from "./Header";
-import MasterStock from "./MasterStockList";
+import InventoryControl from "./stateControl";
 
 function App(){
   return ( 
     <React.Fragment>
       <Header />
-      <MasterStock />
+      <InventoryControl />
     </React.Fragment>
   );
 }
